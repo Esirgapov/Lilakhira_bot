@@ -1,5 +1,5 @@
 from aiogram import Router, F
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 from database.users_db import get_user, is_registered
 from keyboards.reply import main_menu
@@ -48,7 +48,9 @@ async def profile(message: Message):
         disable_web_page_preview=True
     )
 
-
+@router.message(Command("help"))
+async def help_bot(message: Message):
+    await message.answer("Savolingiz bulsa: @akramovaf\nBot bo'yicha takliflar: @simple_urm")
 @router.message(F.text == "💳 Karta 1")
 async def card1(message: Message):
     await message.answer("5614 6849 0286 4006 I.Sh")
