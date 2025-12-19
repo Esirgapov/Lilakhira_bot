@@ -17,7 +17,7 @@ def create_event_keyboard(index: int, total: int, event_id: int) -> InlineKeyboa
     if index > 0:
         row_buttons.append(InlineKeyboardButton(text="⬅️", callback_data=f"ev_prev_{index-1}"))
 
-    row_buttons.append(InlineKeyboardButton(text="Registratriya", callback_data=f"ev_reg_{event_id}"))
+    row_buttons.append(InlineKeyboardButton(text="Registratsiya", callback_data=f"ev_reg_{event_id}"))
 
     if index < total - 1:
         row_buttons.append(InlineKeyboardButton(text="➡️", callback_data=f"ev_next_{index+1}"))
